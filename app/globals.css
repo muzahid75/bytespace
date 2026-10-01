@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Design tokens from the Figma style guide */
+@theme inline {
+  --font-sans: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Clash Display", var(--font-poppins), "Poppins", sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  /* Brand scales (Persian Blue / Electric Lime / Electric Violet / Vulcan / Shuttle Gray) */
+  --color-blue-50: #e7f6ff; --color-blue-100: #d3eeff; --color-blue-200: #b0ddff;
+  --color-blue-300: #81c5ff; --color-blue-400: #4f9dff; --color-blue-500: #2872ff;
+  --color-blue-600: #0445ff; --color-blue-700: #0043ff; --color-blue-800: #003be2;
+  --color-blue-900: #0b36a4; --color-blue-950: #071e5f;
+  --color-lime-50: #fdffe4; --color-lime-100: #faffc5; --color-lime-200: #f2ff92;
+  --color-lime-300: #e4ff54; --color-lime-400: #d4fb20; --color-lime-500: #cbfc01;
+  --color-lime-600: #8cb400; --color-lime-700: #6a8902; --color-lime-950: #243300;
+  --color-mindaro-400: #c1e338; --color-mindaro-500: #a3c919;
+  --color-violet-50: #f5f2ff; --color-violet-600: #7f30f7; --color-violet-950: #300b6a;
+  --color-vulcan-950: #040819;
+  --color-gray-50: #f5f5f6; --color-gray-100: #e5e6e8; --color-gray-200: #ced0d3;
+  --color-gray-400: #82868e; --color-gray-500: #666973; --color-gray-700: #4b4c53;
+  --color-gray-950: #242528;
+
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --primary: #0445ff;
+  --primary-foreground: #ffffff;
+  --secondary: #cbfc01;
+  --secondary-foreground: #000000;
+  --muted: #f5f5f6;
+  --muted-foreground: #4f4f4f;
+  --accent: #ede8ff;
+  --accent-foreground: #300b6a;
+  --border: #e5e6e8;
+  --input: #ced0d3;
+  --ring: #0445ff;
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+  h1, h2, h3, h4 { @apply font-display font-semibold tracking-[-0.01em]; }
+}
+
+@layer utilities {
+  .bg-grid-white {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .bg-grid-dark {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
